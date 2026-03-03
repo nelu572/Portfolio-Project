@@ -67,6 +67,6 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "Portfolio Project.slnx",
+    "dotnet.defaultSolution": "Portfolio-Project.slnx",
     "dotnet.enableWorkspaceBasedDevelopment": false
 }

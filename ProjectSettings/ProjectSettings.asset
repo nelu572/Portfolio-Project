@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 28
-  productGUID: 4746e17071081fe4db071e9744ac1915
+  productGUID: 2609cd250a527644184b05d3d66ac65f
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: Portfolio Project
+  productName: Portfolio-Project
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -843,14 +843,14 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Portfolio Project
+  metroPackageName: Portfolio-Project
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: Portfolio Project
+  metroApplicationDescription: Portfolio-Project
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -921,10 +921,10 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 1
   windowsGamepadBackendHint: 0
-  cloudProjectId: c5c857fc-2341-4665-9bca-b2bb102bd2b1
+  cloudProjectId: c12ae1bd-077b-4961-9670-6386a5fccad0
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Portfolio Project
+  projectName: Portfolio-Project
   organizationId: jungyebin
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
