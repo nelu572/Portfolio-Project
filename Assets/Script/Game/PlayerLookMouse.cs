@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerLookMouse : MonoBehaviour
 {
+
     [SerializeField] private Camera cam;
 
     void Update()
@@ -13,7 +14,6 @@ public class PlayerLookMouse : MonoBehaviour
         if (groundPlane.Raycast(ray, out float distance))
         {
             Vector3 targetPoint = ray.GetPoint(distance);
-
             Vector3 direction = targetPoint - transform.position;
             direction.y = 0f;
 
