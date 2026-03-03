@@ -13,7 +13,7 @@ public class PlayerMove : MonoBehaviour
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
 
-        Vector3 moveVec = new Vector3(h, 0, v).normalized;
+        Vector3 moveVec = new Vector3(h, rb.linearVelocity.y, v).normalized;
         rb.linearVelocity = moveVec * speed;
     }
 }
