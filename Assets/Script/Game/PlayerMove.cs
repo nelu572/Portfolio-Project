@@ -4,16 +4,28 @@ public class PlayerMove : MonoBehaviour
 {
     [SerializeField] private float speed = 3;
     Rigidbody rb;
+
+    float h;
+    float v;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
+
     void Update()
     {
-        float h = Input.GetAxisRaw("Horizontal");
-        float v = Input.GetAxisRaw("Vertical");
+        h = Input.GetAxisRaw("Horizontal");
+        v = Input.GetAxisRaw("Vertical");
+    }
 
-        Vector3 moveVec = new Vector3(h, rb.linearVelocity.y, v).normalized;
-        rb.linearVelocity = moveVec * speed;
+    void FixedUpdate()
+    {
+        Vector3 move = new Vector3(h, 0, v).normalized;
+
+        Vector3 velocity = rb.linearVelocity;
+        velocity.x = move.x * speed;
+        velocity.z = move.z * speed;
+
+        rb.linearVelocity = velocity;
     }
 }
