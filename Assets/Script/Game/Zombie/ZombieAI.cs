@@ -32,7 +32,7 @@ public class ZombieAI : MonoBehaviour
         }
     }
 
-    bool CanSeePlayer()
+    public bool CanSeePlayer()
     {
         Vector3 origin = transform.position + Vector3.up * 1.5f;
         Vector3 dir = (player.position - origin);

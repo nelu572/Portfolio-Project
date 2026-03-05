@@ -7,6 +7,8 @@ public class PlayerMove : MonoBehaviour
 
     float h;
     float v;
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -27,5 +29,11 @@ public class PlayerMove : MonoBehaviour
         velocity.z = move.z * speed;
 
         rb.linearVelocity = velocity;
+    }
+
+    void Dash()
+    {
+        speed = 7;
+        
     }
 }
