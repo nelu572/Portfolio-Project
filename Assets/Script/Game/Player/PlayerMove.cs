@@ -1,8 +1,9 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    [SerializeField] private float speed = 3;
+    [SerializeField] private float speed = 6;
     Rigidbody rb;
 
     float h;
@@ -18,6 +19,14 @@ public class PlayerMove : MonoBehaviour
     {
         h = Input.GetAxisRaw("Horizontal");
         v = Input.GetAxisRaw("Vertical");
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            if (PlayerStatus.Instance.CanDash)
+            {
+                Dash();
+            }
+        }
     }
 
     void FixedUpdate()
@@ -33,7 +42,9 @@ public class PlayerMove : MonoBehaviour
 
     void Dash()
     {
-        speed = 7;
-        
+        speed = 15;
+        DOVirtual.DelayedCall(0.5f, () => { speed = 6; });
+
+        PlayerStatus.Instance.UseDash();
     }
 }
