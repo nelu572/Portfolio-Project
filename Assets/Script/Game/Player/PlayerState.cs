@@ -12,9 +12,10 @@ public class PlayerState : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
         Instance = this;
     }
+
+    
 
     [SerializeField] private float dashCoolDown = 5f;
     private bool canDash = true;

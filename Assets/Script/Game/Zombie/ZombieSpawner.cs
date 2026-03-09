@@ -5,6 +5,7 @@ public class ZombieSpawner : MonoBehaviour
     [SerializeField] private GameObject Zombie;
     [SerializeField] private Transform player;
     [SerializeField] private Vector3[] spawnPoints;
+    
     void Start()
     {
         SpawnZombie();
