@@ -326,4 +326,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 1
+    functionName: EndInvincibleTime
+    data: 
+    objectReferenceParameter: {fileID: 2929961358377533700, guid: 706cad2fc6e4afe4095211c5b0f92690, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

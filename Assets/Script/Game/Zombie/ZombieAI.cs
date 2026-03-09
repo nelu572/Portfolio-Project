@@ -41,7 +41,6 @@ public class ZombieAI : MonoBehaviour
         // 거리 체크
         if (distance > detectRange)
         {
-            Debug.Log("거리");
             return false;
         }
         dir.Normalize();
@@ -49,7 +48,6 @@ public class ZombieAI : MonoBehaviour
         // raycast 체크 (벽 가림 여부)
         if (Physics.Raycast(origin, dir, distance, obstacleLayer))
         {
-            Debug.Log("벽");
             return false; // 벽에 막힘
         }
 
