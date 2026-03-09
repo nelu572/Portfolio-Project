@@ -22,7 +22,7 @@ public class PlayerMove : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            if (PlayerStatus.Instance.CanDash)
+            if (PlayerState.Instance.CanDash)
             {
                 Dash();
             }
@@ -45,6 +45,6 @@ public class PlayerMove : MonoBehaviour
         speed = 15;
         DOVirtual.DelayedCall(0.5f, () => { speed = 6; });
 
-        PlayerStatus.Instance.UseDash();
+        PlayerState.Instance.UseDash();
     }
 }

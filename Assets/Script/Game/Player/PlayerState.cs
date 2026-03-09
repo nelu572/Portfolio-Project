@@ -1,9 +1,9 @@
 using DG.Tweening;
 using UnityEngine;
 
-public class PlayerStatus : MonoBehaviour
+public class PlayerState : MonoBehaviour
 {
-    public static PlayerStatus Instance;
+    public static PlayerState Instance;
 
     void Awake()
     {

@@ -5,7 +5,7 @@ public class ZombieAI : MonoBehaviour
 {
     private Transform player;
     private NavMeshAgent agent;
-
+    
     [SerializeField] private float detectRange = 15f;
     [SerializeField] private LayerMask obstacleLayer;
 

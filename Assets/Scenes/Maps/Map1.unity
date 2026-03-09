@@ -4724,8 +4724,8 @@ GameObject:
   - component: {fileID: 1747077013}
   - component: {fileID: 1747077012}
   - component: {fileID: 1747077011}
-  - component: {fileID: 1747077014}
   - component: {fileID: 1747077015}
+  - component: {fileID: 1747077014}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -5900,7 +5900,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2132854832}
   m_Layer: 0
-  m_Name: point
+  m_Name: CamPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
