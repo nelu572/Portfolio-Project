@@ -44,7 +44,7 @@ namespace PortfolioFilling.Core
 
         private GameObject CreateSystemsRoot()
         {
-            var root = new GameObject("GameSystems");
+            var root = new GameObject("게임시스템");
             root.transform.SetParent(transform);
 
             var registry = root.AddComponent<GameRegistry>();
@@ -66,20 +66,20 @@ namespace PortfolioFilling.Core
         private void CreateEnvironment()
         {
             var ground = GameObject.CreatePrimitive(PrimitiveType.Plane);
-            ground.name = "Ground";
+            ground.name = "바닥";
             ground.transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
             ground.transform.localScale = new Vector3(4f, 1f, 4f);
             ground.GetComponent<Renderer>().sharedMaterial.color = new Color(0.25f, 0.22f, 0.18f);
 
-            CreateWall("NorthWall", new Vector3(0f, 2f, 19f), new Vector3(40f, 4f, 1f));
-            CreateWall("SouthWall", new Vector3(0f, 2f, -19f), new Vector3(40f, 4f, 1f));
-            CreateWall("EastWall", new Vector3(19f, 2f, 0f), new Vector3(1f, 4f, 40f));
-            CreateWall("WestWall", new Vector3(-19f, 2f, 0f), new Vector3(1f, 4f, 40f));
+            CreateWall("북쪽벽", new Vector3(0f, 2f, 19f), new Vector3(40f, 4f, 1f));
+            CreateWall("남쪽벽", new Vector3(0f, 2f, -19f), new Vector3(40f, 4f, 1f));
+            CreateWall("동쪽벽", new Vector3(19f, 2f, 0f), new Vector3(1f, 4f, 40f));
+            CreateWall("서쪽벽", new Vector3(-19f, 2f, 0f), new Vector3(1f, 4f, 40f));
 
             for (var i = 0; i < 4; i++)
             {
                 var pipe = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
-                pipe.name = $"SteamPipe_{i}";
+                pipe.name = $"증기파이프_{i}";
                 pipe.transform.position = new Vector3(-10f + i * 5f, 1f, 12f);
                 pipe.transform.localScale = new Vector3(0.6f, 1f + i * 0.3f, 0.6f);
                 pipe.GetComponent<Renderer>().sharedMaterial.color = new Color(0.46f, 0.37f, 0.24f);
@@ -98,7 +98,7 @@ namespace PortfolioFilling.Core
         private DefenseObjective CreateObjective()
         {
             var objectiveObject = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            objectiveObject.name = "DefenseObjective";
+            objectiveObject.name = "방어목표물";
             objectiveObject.transform.SetParent(transform);
             objectiveObject.transform.position = new Vector3(0f, 1f, 10f);
             objectiveObject.transform.localScale = new Vector3(2.5f, 2f, 2.5f);
@@ -112,7 +112,7 @@ namespace PortfolioFilling.Core
 
         private GameObject CreatePlayer(ConfigManager config)
         {
-            var playerRoot = new GameObject("PlayerRoot");
+            var playerRoot = new GameObject("플레이어루트");
             playerRoot.transform.SetParent(transform);
             playerRoot.transform.position = new Vector3(0f, 1.1f, -8f);
 
@@ -147,7 +147,7 @@ namespace PortfolioFilling.Core
 
         private static void AttachStarterWeapon(PlayerWeaponController weaponController)
         {
-            var weaponObject = new GameObject("RustyRifle");
+            var weaponObject = new GameObject("녹슨소총");
             weaponObject.transform.SetParent(weaponController.transform);
             weaponObject.transform.localPosition = new Vector3(0.28f, -0.18f, 0.45f);
             weaponObject.transform.localRotation = Quaternion.identity;
@@ -155,7 +155,7 @@ namespace PortfolioFilling.Core
             var weapon = weaponObject.AddComponent<HitscanWeapon>();
             weapon.Configure(new WeaponData
             {
-                displayName = "Rusty Rifle",
+                displayName = "녹슨 소총",
                 damage = 20f,
                 fireInterval = 0.18f,
                 clipSize = 8,
@@ -169,7 +169,7 @@ namespace PortfolioFilling.Core
 
         private GameObject CreateEnemySpawner(Transform player, DefenseObjective objective, ConfigManager config)
         {
-            var spawnerObject = new GameObject("EnemySystems");
+            var spawnerObject = new GameObject("적시스템");
             spawnerObject.transform.SetParent(transform);
 
             var spawner = spawnerObject.AddComponent<EnemySpawner>();
@@ -182,11 +182,11 @@ namespace PortfolioFilling.Core
 
         private void CreateVisualHarness()
         {
-            var settingsObject = new GameObject("VisualHarness");
+            var settingsObject = new GameObject("비주얼하네스");
             settingsObject.transform.SetParent(transform);
             settingsObject.AddComponent<PsxVisualSettings>();
 
-            var flickerLightObject = new GameObject("FlickerLight");
+            var flickerLightObject = new GameObject("깜빡이는조명");
             flickerLightObject.transform.SetParent(transform);
             flickerLightObject.transform.position = new Vector3(0f, 4f, 8f);
             var light = flickerLightObject.AddComponent<Light>();
@@ -199,7 +199,7 @@ namespace PortfolioFilling.Core
 
         private void CreateDebugHarness(ConfigManager config, ResourceSystem resourceSystem)
         {
-            var debugObject = new GameObject("DebugHarness");
+            var debugObject = new GameObject("디버그하네스");
             debugObject.transform.SetParent(transform);
 
             var overlay = debugObject.AddComponent<DebugOverlay>();

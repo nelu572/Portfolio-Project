@@ -7,7 +7,7 @@ namespace PortfolioFilling.Weapon
         protected override void FireShot(Vector3 origin, Vector3 direction)
         {
             var projectile = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-            projectile.name = "HarnessProjectile";
+            projectile.name = "하네스투사체";
             projectile.transform.position = origin + direction * 0.4f;
             projectile.transform.localScale = Vector3.one * 0.2f;
 

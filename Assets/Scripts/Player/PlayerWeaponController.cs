@@ -64,7 +64,7 @@ namespace PortfolioFilling.Player
 
         public string GetWeaponStatus()
         {
-            return CurrentWeapon == null ? "No Weapon" : CurrentWeapon.GetDebugStatus();
+            return CurrentWeapon == null ? "무기 없음" : CurrentWeapon.GetDebugStatus();
         }
 
         private void SwitchWeapon(int direction)

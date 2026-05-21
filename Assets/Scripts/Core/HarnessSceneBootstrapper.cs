@@ -19,7 +19,7 @@ namespace PortfolioFilling.Core
                 return;
             }
 
-            var root = new GameObject("HarnessSceneRoot");
+            var root = new GameObject("하네스씬루트");
             root.AddComponent<HarnessSceneInstaller>();
         }
     }

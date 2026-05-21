@@ -33,7 +33,7 @@ namespace PortfolioFilling.Weapon
 
             Ammo.ReloadFull();
             Reload.Clear();
-            DebugLog.Log($"{Data.displayName} reload complete.", this);
+            DebugLog.Log($"{Data.displayName} 장전 완료.", this);
         }
 
         public bool TryFire()
@@ -62,7 +62,7 @@ namespace PortfolioFilling.Weapon
             }
 
             Reload.Begin(Data.reloadDuration);
-            DebugLog.Log($"{Data.displayName} reload started.", this);
+            DebugLog.Log($"{Data.displayName} 장전 시작.", this);
         }
 
         public void RefillAmmo()
@@ -73,8 +73,8 @@ namespace PortfolioFilling.Weapon
         public string GetDebugStatus()
         {
             return Data == null || Ammo == null
-                ? "Unconfigured Weapon"
-                : $"{Data.displayName} | {Ammo.CurrentClip}/{Ammo.CurrentReserve}" + (Reload.IsReloading ? " (Reloading)" : string.Empty);
+                ? "설정되지 않은 무기"
+                : $"{Data.displayName} | {Ammo.CurrentClip}/{Ammo.CurrentReserve}" + (Reload.IsReloading ? " (장전 중)" : string.Empty);
         }
 
         protected abstract void FireShot(Vector3 origin, Vector3 direction);

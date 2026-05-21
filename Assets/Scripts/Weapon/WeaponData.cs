@@ -5,7 +5,7 @@ namespace PortfolioFilling.Weapon
     [Serializable]
     public sealed class WeaponData
     {
-        public string displayName = "Weapon";
+        public string displayName = "무기";
         public float damage = 10f;
         public float fireInterval = 0.2f;
         public int clipSize = 8;
