@@ -42,12 +42,12 @@
 
 ## 참고 문서
 
-프로젝트 내부 문서는 `Assets/Harness` 아래에 정리되어 있습니다.
+프로젝트 내부 문서는 `Harness` 아래에 정리되어 있습니다.
 
-- `Assets/Harness/Docs/Planning/TODO_ROADMAP.md`
-- `Assets/Harness/Docs/Structure/PROJECT_STRUCTURE.md`
-- `Assets/Harness/Docs/Conventions/AI_DEVELOPMENT_RULES.md`
-- `Assets/Harness/Docs/Conventions/CODING_CONVENTIONS.md`
+- `Harness/Docs/Planning/TODO_ROADMAP.md`
+- `Harness/Docs/Structure/PROJECT_STRUCTURE.md`
+- `Harness/Docs/Conventions/AI_DEVELOPMENT_RULES.md`
+- `Harness/Docs/Conventions/CODING_CONVENTIONS.md`
 
 ## 한 줄 요약
 

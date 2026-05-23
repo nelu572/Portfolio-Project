@@ -20,24 +20,24 @@
   - `Defense`: 디펜스 시스템용 최상위 폴더
   - `DebugTools`: 디버그 도구용 최상위 폴더
   - `Visual`: 비주얼 시스템용 최상위 폴더
-- `Assets/Harness`
+- `Harness`
   - 하네스 전용 자산 및 하네스 문서 보관 폴더
-- `Assets/Harness/Docs`
+- `Harness/Docs`
   - 하네스 문서 루트
   - `Conventions`: 작업 규칙, 코딩 규칙, GitHub 규칙
   - `Planning`: 로드맵, 비주얼 방향, 중장기 방향 문서
   - `Logs`: 변경 이력, 작업 메모
   - `Structure`: 구조 설명 문서
-- `Assets/Harness/WORK_ORDER.md`
+- `Harness/WORK_ORDER.md`
   - AI 작업 지시 템플릿
-- `Assets/Harness/AGENTS.md`
+- `Harness/AGENTS.md`
   - AI가 먼저 읽어야 하는 프로젝트 운영 안내서
 
 ## 주요 진입점
 
 - 현재 프로토타입 플레이 씬: `Assets/Scenes/GameScene.unity`
 - 기본 참고 씬: `Assets/Scenes/SampleScene.unity`
-- 하네스 문서 루트: `Assets/Harness`
+- 하네스 문서 루트: `Harness`
 
 ## 씬 역할
 

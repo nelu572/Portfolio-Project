@@ -3,7 +3,7 @@
 ## 우선순위
 
 1. 현재 대화의 직접 프롬프트를 가장 우선한다.
-2. 그 다음 `Assets/Harness/WORK_ORDER.md`를 따른다.
+2. 그 다음 `Harness/WORK_ORDER.md`를 따른다.
 3. 그 다음 하네스 문서와 프로젝트 구조를 따른다.
 
 ## 작업 원칙
@@ -27,13 +27,13 @@
 
 ## 작업 기록
 
-1. 작업이 끝나면 `Assets/Harness/Docs/Logs/FILE_CHANGE_LOG.md`를 갱신한다.
+1. 작업이 끝나면 `Harness/Docs/Logs/FILE_CHANGE_LOG.md`를 갱신한다.
 2. 어떤 파일을 왜 수정했는지 짧게 남긴다.
-3. 사용자가 `메모 작업해`라고 지시하면 `Assets/Harness/WORK_ORDER.md`를 먼저 읽고 그 안의 지시를 실제 작업으로 수행한다.
-4. `메모 작업해`를 받았을 때는 `Assets/Harness/WORK_ORDER.md`를 단순 편집하지 말고, 비어 있지 않은 작업 내용을 기준으로 구현을 진행한다.
-5. 사용자가 `메모 작업 n번째 해`처럼 번호를 지정하면 `Assets/Harness/WORK_ORDER.md`의 상세 요구사항 중 해당 번호만 수행한다.
-6. `Assets/Harness/WORK_ORDER.md`는 템플릿 문서로 취급하고, 작업 내용 영역은 커밋 전 비워진 상태를 유지한다.
-7. `Assets/Harness/WORK_ORDER.md`는 커밋/푸시 대상에 포함하지 않는다.
-8. `Assets/Harness/WORK_ORDER.md` 맨 아래의 `유저 메모장` 파트는 작업 대상으로 해석하지 않고, 비우거나 지우거나 커밋하지 않는다.
-9. `Assets/Harness/Docs/Logs/FILE_CHANGE_LOG.md`의 `현재 커밋 안 된 작업` 섹션은 커밋 전 비워진 상태를 유지하고, 커밋/푸시 대상에 포함하지 않는다.
+3. 사용자가 `메모 작업해`라고 지시하면 `Harness/WORK_ORDER.md`를 먼저 읽고 그 안의 지시를 실제 작업으로 수행한다.
+4. `메모 작업해`를 받았을 때는 `Harness/WORK_ORDER.md`를 단순 편집하지 말고, 비어 있지 않은 작업 내용을 기준으로 구현을 진행한다.
+5. 사용자가 `메모 작업 n번째 해`처럼 번호를 지정하면 `Harness/WORK_ORDER.md`의 상세 요구사항 중 해당 번호만 수행한다.
+6. `Harness/WORK_ORDER.md`는 템플릿 문서로 취급하고, 작업 내용 영역은 커밋 전 비워진 상태를 유지한다.
+7. `Harness/WORK_ORDER.md`는 커밋/푸시 대상에 포함하지 않는다.
+8. `Harness/WORK_ORDER.md` 맨 아래의 `유저 메모장` 파트는 작업 대상으로 해석하지 않고, 비우거나 지우거나 커밋하지 않는다.
+9. `Harness/Docs/Logs/FILE_CHANGE_LOG.md`의 `현재 커밋 안 된 작업` 섹션은 커밋 전 비워진 상태를 유지하고, 커밋/푸시 대상에 포함하지 않는다.
 10. 로그에 작업을 나열할 때는 최근에 수행한 작업을 위에 적는다.
