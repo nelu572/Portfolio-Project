@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 100105}
   - component: {fileID: 100103}
   - component: {fileID: 100104}
+  - component: {fileID: 100106}
   m_Layer: 0
   m_Name: PlayerRoot
   m_TagString: Untagged
@@ -215,6 +216,19 @@ MonoBehaviour:
   mouseSensitivity: 1.5
   maxLookAngle: 85
   lockCursorOnPlay: 1
+--- !u!114 &100106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37a1811bdac64f3a926f8dcd972c0a87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMotor: {fileID: 100104}
 --- !u!114 &100105
 MonoBehaviour:
   m_ObjectHideFlags: 0

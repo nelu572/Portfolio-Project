@@ -22,17 +22,21 @@ public sealed class PlayerMotor : MonoBehaviour
     private float verticalVelocity;
     private float pitch;
 
+    public bool LockCursorOnPlay
+    {
+        get => lockCursorOnPlay;
+        set => lockCursorOnPlay = value;
+    }
+
     private void Start()
     {
-        if (lockCursorOnPlay)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
+        ApplyCursorLock(lockCursorOnPlay);
     }
 
     private void Update()
     {
+        ApplyCursorLock(lockCursorOnPlay);
+
         if (playerInput == null || characterController == null || playerRoot == null || cameraPivot == null)
         {
             return;
@@ -73,5 +77,11 @@ public sealed class PlayerMotor : MonoBehaviour
         velocity.y = verticalVelocity;
 
         characterController.Move(velocity * Time.deltaTime);
+    }
+
+    private static void ApplyCursorLock(bool shouldLock)
+    {
+        Cursor.lockState = shouldLock ? CursorLockMode.Locked : CursorLockMode.None;
+        Cursor.visible = !shouldLock;
     }
 }
