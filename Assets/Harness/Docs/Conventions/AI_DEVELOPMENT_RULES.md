@@ -33,4 +33,4 @@
 4. `메모 작업해`를 받았을 때는 `Assets/Harness/WORK_ORDER.md`를 단순 편집하지 말고, 비어 있지 않은 작업 내용을 기준으로 구현을 진행한다.
 5. `Assets/Harness/WORK_ORDER.md`는 템플릿 문서로 취급한다.
 6. 사용자가 지우라고 명시하지 않는 한 `WORK_ORDER.md`에 메모나 상태 기록을 덧붙이지 않는다.
-7. 메모가 필요하면 `Assets/Harness/Docs/Logs/WORK_MEMO.md` 또는 `Assets/Harness/Docs/Logs/FILE_CHANGE_LOG.md`를 사용한다.
+7. 메모가 필요하면 `Assets/Harness/Docs/Logs/FILE_CHANGE_LOG.md`의 메모 파트에 기록한다.

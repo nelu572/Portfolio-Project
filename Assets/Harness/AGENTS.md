@@ -24,7 +24,6 @@
 - `Assets/Harness/Docs/Planning/TODO_ROADMAP.md`: 출시 로드맵
 - `Assets/Harness/Docs/Planning/VISUAL_HARNESS.md`: 비주얼 방향
 - `Assets/Harness/Docs/Logs/FILE_CHANGE_LOG.md`: 최근 수정 이력
-- `Assets/Harness/Docs/Logs/WORK_MEMO.md`: 작업 메모
 
 ## 프로젝트 의도
 
@@ -41,7 +40,7 @@
 - 사용자가 `메모 작업해`라고 요청하면 `Assets/Harness/WORK_ORDER.md`를 먼저 읽고, 그 안에 적힌 작업 지시를 실제 작업으로 수행한다.
 - `메모 작업해`는 단순 메모 정리가 아니라, `Assets/Harness/WORK_ORDER.md` 기반 작업 시작 명령으로 해석한다.
 - `Assets/Harness/WORK_ORDER.md`는 템플릿 파일이므로, 사용자가 지우라고 하지 않는 한 임의로 내용을 확장하거나 메모를 추가하지 않는다.
-- 메모가 필요하면 `Assets/Harness/Docs/Logs/WORK_MEMO.md` 또는 `Assets/Harness/Docs/Logs/FILE_CHANGE_LOG.md`를 사용한다.
+- 메모가 필요하면 `Assets/Harness/Docs/Logs/FILE_CHANGE_LOG.md`의 메모 파트에 기록한다.
 
 ## 문서 처리 규칙
 
