@@ -2,10 +2,7 @@
 
 ## 현재 커밋 안 된 작업
 
-- 기본 플레이어 이동 패스: `GameScene` 추가, `CharacterController` 기반 이동, 마우스 시점 조작, 점프/스프린트 입력 구현.
-- 입력 연결 정리: 기존 `InputSystem_Actions.inputactions`를 재사용하고 `PlayerInput + Invoke Unity Events` 방식으로 플레이어 입력을 연결.
-- 씬/패키지 설정: `GameScene`을 빌드 설정에 추가하고 Unity 6 대응 `ProBuilder 6.0.8` 의존성과 설정을 추가.
-- 스크립트 정리: FPS 접두어 제거, 불필요한 `Application.isPlaying` 체크 제거, 빈 폴더 추적용 `.gitkeep` 제거.
+- 커서 잠금 디버그 토글: `PlayerMotor`의 `lockCursorOnPlay` 값을 런타임에 적용하고, `L` 키로 해당 값만 반전하는 분리형 디버그 컴포넌트 추가.
 
 ## 2026-05-23
 
@@ -88,3 +85,20 @@
 - `Assets/Scripts/Player/.gitkeep`
 - `Assets/Scripts/Visual/.gitkeep`
 - `Assets/Scripts/Weapon/.gitkeep`
+
+### 작업 6: 플레이어 커서 잠금 디버그 토글 추가
+
+#### 변경 내용
+
+- `PlayerMotor`가 `lockCursorOnPlay` 값을 기준으로 커서 잠금/표시 상태를 적용하도록 정리.
+- 디버그 전용 입력 처리를 `PlayerMotorCursorLockDebugToggle` 클래스로 분리.
+- `L` 키를 누르면 디버그 컴포넌트가 `PlayerMotor.LockCursorOnPlay` 값만 반전하도록 구현.
+- 디버그 컴포넌트를 `GameScene`의 `PlayerRoot`에 연결.
+- 나중에 디버그 기능 제거 시 디버그 컴포넌트와 스크립트만 제거하면 되도록 토글 실행 로직을 분리.
+
+#### 주요 파일
+
+- `Assets/Scripts/Player/PlayerMotor.cs`
+- `Assets/Scripts/DebugTools/PlayerMotorCursorLockDebugToggle.cs`
+- `Assets/Scripts/DebugTools/PlayerMotorCursorLockDebugToggle.cs.meta`
+- `Assets/Scenes/GameScene.unity`
