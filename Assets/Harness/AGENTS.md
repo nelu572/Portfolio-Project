@@ -38,9 +38,12 @@
 - 지시가 없다면 TODO를 남기기보다 먼저 동작하는 구현을 만든다.
 - 작업이 끝나면 `Assets/Harness/Docs/Logs/FILE_CHANGE_LOG.md`를 갱신한다.
 - 사용자가 `메모 작업해`라고 요청하면 `Assets/Harness/WORK_ORDER.md`를 먼저 읽고, 그 안에 적힌 작업 지시를 실제 작업으로 수행한다.
+- 사용자가 `메모 작업 n번째 해`처럼 번호를 지정하면 `Assets/Harness/WORK_ORDER.md`의 상세 요구사항 중 해당 번호만 수행한다.
 - `메모 작업해`는 단순 메모 정리가 아니라, `Assets/Harness/WORK_ORDER.md` 기반 작업 시작 명령으로 해석한다.
-- `Assets/Harness/WORK_ORDER.md`는 템플릿 파일이므로, 사용자가 지우라고 하지 않는 한 임의로 내용을 확장하거나 메모를 추가하지 않는다.
-- 메모가 필요하면 `Assets/Harness/Docs/Logs/FILE_CHANGE_LOG.md`의 메모 파트에 기록한다.
+- `Assets/Harness/WORK_ORDER.md`는 템플릿 파일이므로 작업 내용 영역은 커밋 전 비워진 상태를 유지하고, 커밋/푸시 대상에 포함하지 않는다.
+- `Assets/Harness/WORK_ORDER.md` 맨 아래의 `유저 메모장` 파트는 작업 대상으로 해석하지 않고, 비우거나 지우거나 커밋하지 않는다.
+- `Assets/Harness/Docs/Logs/FILE_CHANGE_LOG.md`의 `현재 커밋 안 된 작업` 섹션은 커밋 전 비워진 상태를 유지하고, 커밋/푸시 대상에 포함하지 않는다.
+- 로그에 작업을 나열할 때는 최근에 수행한 작업을 위에 적는다.
 
 ## 문서 처리 규칙
 
