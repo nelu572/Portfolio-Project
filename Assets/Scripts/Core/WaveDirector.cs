@@ -13,6 +13,7 @@ public sealed class WaveDirector : MonoBehaviour
     private Transform player;
     private IDamageable playerHealth;
     private DefenseObjective objective;
+    private CastleGateObjective castleGate;
     private Transform[] spawnPoints;
     private Material enemyMaterial;
     private int currentWave;
@@ -40,11 +41,13 @@ public sealed class WaveDirector : MonoBehaviour
         IDamageable playerDamageable,
         DefenseObjective defenseObjective,
         Transform[] enemySpawnPoints,
-        Material zombieMaterial)
+        Material zombieMaterial,
+        CastleGateObjective gateObjective = null)
     {
         player = playerTransform;
         playerHealth = playerDamageable;
         objective = defenseObjective;
+        castleGate = gateObjective;
         spawnPoints = enemySpawnPoints;
         enemyMaterial = zombieMaterial;
         nextWaveTimer = 1f;
@@ -137,7 +140,7 @@ public sealed class WaveDirector : MonoBehaviour
         controller.center = new Vector3(0f, 1f, 0f);
 
         var enemy = enemyObject.AddComponent<ZombieEnemy>();
-        enemy.Initialize(player, playerHealth, objective, this);
+        enemy.Initialize(player, playerHealth, objective, this, castleGate);
         aliveEnemies.Add(enemy);
     }
 }

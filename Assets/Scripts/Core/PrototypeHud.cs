@@ -4,8 +4,10 @@ public sealed class PrototypeHud : MonoBehaviour
 {
     private PlayerHealth playerHealth;
     private DefenseObjective objective;
+    private CastleGateObjective castleGate;
     private PlayerHitscanWeapon weapon;
     private WaveDirector waveDirector;
+    private GrapplingHookPrototype grapplingHook;
     private GUIStyle labelStyle;
     private GUIStyle centerStyle;
     private GUIStyle panelStyle;
@@ -15,12 +17,15 @@ public sealed class PrototypeHud : MonoBehaviour
         PlayerHealth player,
         DefenseObjective defenseObjective,
         PlayerHitscanWeapon playerWeapon,
-        WaveDirector director)
+        WaveDirector director,
+        CastleGateObjective gateObjective = null)
     {
         playerHealth = player;
         objective = defenseObjective;
         weapon = playerWeapon;
         waveDirector = director;
+        castleGate = gateObjective;
+        grapplingHook = player != null ? player.GetComponent<GrapplingHookPrototype>() : null;
     }
 
     private void OnGUI()
@@ -63,6 +68,9 @@ public sealed class PrototypeHud : MonoBehaviour
         var playerHp = playerHealth != null ? $"{playerHealth.CurrentHealth:0}/{playerHealth.MaxHealth:0}" : "-";
         var objectiveName = objective != null ? objective.DisplayName : "왕";
         var objectiveHp = objective != null ? $"{objective.CurrentHealth:0}/{objective.MaxHealth:0}" : "-";
+        var gateText = castleGate != null
+            ? $"{castleGate.DisplayName} {(castleGate.IsAlive ? $"{castleGate.CurrentHealth:0}/{castleGate.MaxHealth:0}" : "돌파됨")}\n"
+            : string.Empty;
         var ammo = weapon != null ? $"{weapon.AmmoInMagazine}/{weapon.MagazineSize}" : "-";
         var reload = weapon != null && weapon.IsReloading ? " 재장전" : string.Empty;
         var weaponName = weapon != null ? weapon.WeaponName : "증기 리볼버";
@@ -72,10 +80,13 @@ public sealed class PrototypeHud : MonoBehaviour
         var nextWave = waveDirector != null && enemies == 0 ? $" / 다음 {waveDirector.NextWaveTimer:0.0}s" : string.Empty;
 
         GUI.Box(new Rect(18f, 18f, 470f, 178f), GUIContent.none, panelStyle);
-        GUI.Label(new Rect(34f, 28f, 440f, 160f), $"플레이어 {playerHp}\n{objectiveName} 체력 {objectiveHp}\n무기 {weaponName}\n왼팔 {armSkillName}\n탄약 {ammo}{reload}\n웨이브 {wave} / 남은 적 {enemies}{nextWave}", labelStyle);
+        GUI.Label(new Rect(34f, 28f, 440f, 160f), $"플레이어 {playerHp}\n{objectiveName} 체력 {objectiveHp}\n{gateText}무기 {weaponName}\n왼팔 {armSkillName}\n탄약 {ammo}{reload}\n웨이브 {wave} / 남은 적 {enemies}{nextWave}", labelStyle);
 
         GUI.Box(new Rect(Screen.width - 330f, Screen.height - 118f, 306f, 92f), GUIContent.none, panelStyle);
-        GUI.Label(new Rect(Screen.width - 312f, Screen.height - 102f, 270f, 70f), "좌클릭 사격\nR 재장전  L 커서", smallStyle);
+        var grapple = grapplingHook != null
+            ? (grapplingHook.IsGrappling ? "그래플 이동 중" : $"그래플 쿨타임 {grapplingHook.Cooldown01 * 100f:0}%")
+            : "그래플 없음";
+        GUI.Label(new Rect(Screen.width - 312f, Screen.height - 102f, 285f, 76f), $"좌클릭 사격  우클릭 그래플\nR 재장전  L 커서\n{grapple}", smallStyle);
     }
 
     private void DrawWeaponFeedback()

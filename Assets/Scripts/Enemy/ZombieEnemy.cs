@@ -19,6 +19,7 @@ public sealed class ZombieEnemy : MonoBehaviour, IDamageable
     private Transform player;
     private IDamageable playerHealth;
     private DefenseObjective objective;
+    private CastleGateObjective castleGate;
     private WaveDirector waveDirector;
     private float currentHealth;
     private float attackTimer;
@@ -44,12 +45,18 @@ public sealed class ZombieEnemy : MonoBehaviour, IDamageable
         currentHealth = maxHealth;
     }
 
-    public void Initialize(Transform playerTransform, IDamageable playerDamageable, DefenseObjective defenseObjective, WaveDirector owner)
+    public void Initialize(
+        Transform playerTransform,
+        IDamageable playerDamageable,
+        DefenseObjective defenseObjective,
+        WaveDirector owner,
+        CastleGateObjective gateObjective = null)
     {
         player = playerTransform;
         playerHealth = playerDamageable;
         objective = defenseObjective;
         waveDirector = owner;
+        castleGate = gateObjective;
     }
 
     private void Update()
@@ -120,6 +127,11 @@ public sealed class ZombieEnemy : MonoBehaviour, IDamageable
             }
         }
 
+        if (castleGate != null && castleGate.IsAlive)
+        {
+            return castleGate.transform;
+        }
+
         if (objective != null && objective.IsAlive)
         {
             return objective.transform;
@@ -130,6 +142,11 @@ public sealed class ZombieEnemy : MonoBehaviour, IDamageable
 
     private IDamageable SelectTargetDamageable(Transform targetTransform)
     {
+        if (castleGate != null && targetTransform == castleGate.transform)
+        {
+            return castleGate;
+        }
+
         if (objective != null && targetTransform == objective.transform)
         {
             return objective;
